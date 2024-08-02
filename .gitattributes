@@ -1,2 +1,23 @@
-# Auto detect text files and perform LF normalization
+# Ensure all text files use LF (Unix-style) line endings
 * text=auto
+
+# Markdown files should use LF
+*.md text eol=lf
+
+# YAML files should use LF
+*.yml text eol=lf
+
+# HTML files should use LF
+*.html text eol=lf
+
+# CSS files should use LF
+*.css text eol=lf
+
+# JavaScript files should use LF
+*.js text eol=lf
+
+# Ensure binary files are not modified
+*.jpg binary
+*.png binary
+*.gif binary
+*.pdf binary
