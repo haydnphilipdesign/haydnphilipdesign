@@ -25,7 +25,7 @@ body {
 
 /* Header/Hero Section */
 #hero {
-    background: url('hero-background.jpg') no-repeat center center/cover;
+    background: url('\Images\hero-background.jpg') no-repeat center center/cover;
     height: 100vh;
     color: #fff;
     text-align: center;
