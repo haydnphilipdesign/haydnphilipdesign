@@ -121,6 +121,10 @@ section h2 {
     gap: 2rem;
 }
 
+.portfolio-categories > div {
+    margin-bottom: 2rem;
+}
+
 /* Contact Section */
 .contact-card {
     background: var(--secondary-color);
@@ -163,22 +167,6 @@ section h2 {
     background: #2980b9;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .portfolio-categories {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Contact Form Styles */
 #contact-form {
   max-width: 500px;
@@ -219,11 +207,6 @@ section h2 {
 
 #contact-form button:hover {
   background: #2980b9;
-}
-
-/* Portfolio Styles */
-.portfolio-categories > div {
-    margin-bottom: 2rem;
 }
 
 /* Swiper Styles */
@@ -276,7 +259,7 @@ section h2 {
     text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .grid-item {
         width: calc(33.333% - 10px);
@@ -284,6 +267,19 @@ section h2 {
 }
 
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .portfolio-categories {
+        grid-template-columns: 1fr;
+    }
+
     .grid-item {
         width: calc(50% - 10px);
     }
