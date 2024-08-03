@@ -8,12 +8,17 @@
     <title>Haydn Watkins - Graphic & Web Designer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 </head>
 <body>
     <header id="hero">
         <div class="container">
+            <div class="parallax">
+                <img src="assets/images/hero-background.jpg" alt="Background" class="parallax-bg">
+            </div>
             <img src="assets/images/me.jpg" alt="Haydn Watkins" class="profile-picture">
             <h1>Haydn Watkins</h1>
             <h2>Multimedium Design</h2>
@@ -43,11 +48,12 @@
             <div class="container">
                 <h2>Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-item"><i class="fas fa-paint-brush"></i>Graphic Design</div>
-                    <div class="skill-item"><i class="fas fa-code"></i>Web Design</div>
-                    <div class="skill-item"><i class="fas fa-bullhorn"></i>Brand Development</div>
-                    <div class="skill-item"><i class="fas fa-camera"></i>Photography</div>
-                    <div class="skill-item"><i class="fas fa-chart-line"></i>Digital Marketing</div>
+                    <div class="skill-item">Graphic Design</div>
+                    <div class="skill-item">Web Design</div>
+                    <div class="skill-item">Brand Development</div>
+                    <div class="skill-item">UI/UX Design</div>
+                    <div class="skill-item">Photography</div>
+                    <div class="skill-item">Digital Marketing</div>
                 </div>
             </div>
         </section>
@@ -61,7 +67,8 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img src="assets/images/portfolio/graphic1.png" alt="Graphic Design Project 1"></div>
-                                <!-- Add more images here -->
+                                <div class="swiper-slide"><img src="assets/images/portfolio/graphic2.jpg" alt="Graphic Design Project 2"></div>
+                                <!-- Add more slides as needed -->
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-next"></div>
@@ -72,7 +79,8 @@
                         <h3>Photography</h3>
                         <div class="masonry-grid">
                             <div class="grid-item"><img src="assets/images/portfolio/photo1.jpg" alt="Photography 1"></div>
-                            <!-- Add more images here -->
+                            <div class="grid-item"><img src="assets/images/portfolio/photo2.jpg" alt="Photography 2"></div>
+                            <!-- Add more grid items as needed -->
                         </div>
                     </div>
                     <div id="websites">
@@ -96,7 +104,11 @@
                     <div class="social-links">
                         <!-- Social media icons will be added here -->
                     </div>
+                    <div class="payment-methods">
+                        <!-- Payment method icons will be added here -->
+                    </div>
                 </div>
+
                 <form action="https://formspree.io/f/your_formspree_endpoint" method="POST" id="contact-form">
                     <div class="form-group">
                         <label for="name">Name:</label>
