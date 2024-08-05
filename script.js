@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+// Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+});
 // Add animation for photo items
     const photoItems = document.querySelectorAll('.photo-item');
     const animatePhotos = () => {
