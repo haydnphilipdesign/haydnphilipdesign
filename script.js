@@ -1,24 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Initialize Swiper
-    const swiper = new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-    });
-
-       // Remove Masonry initialization
-
-    // Add animation for photo items
+// Add animation for photo items
     const photoItems = document.querySelectorAll('.photo-item');
     const animatePhotos = () => {
         photoItems.forEach(item => {
