@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-// Initialize Swiper
+    // Initialize Swiper
     var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
         loop: true,
         pagination: {
             el: '.swiper-pagination',
@@ -11,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
             prevEl: '.swiper-button-prev',
         },
     });
-});
-// Add animation for photo items
+
+    // Add animation for photo items
     const photoItems = document.querySelectorAll('.photo-item');
     const animatePhotos = () => {
         photoItems.forEach(item => {
@@ -116,4 +118,23 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    // Masonry layout for photography section
+    function resizeGridItem(item){
+        grid = document.getElementsByClassName("photo-masonry")[0];
+        rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+        rowSpan = Math.ceil((item.querySelector('img').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+        item.style.gridRowEnd = "span "+rowSpan;
+    }
+
+    function resizeAllGridItems(){
+        allItems = document.getElementsByClassName("photo-item");
+        for(x=0;x<allItems.length;x++){
+            resizeGridItem(allItems[x]);
+        }
+    }
+
+    window.addEventListener("load", resizeAllGridItems);
+    window.addEventListener("resize", resizeAllGridItems);
 });

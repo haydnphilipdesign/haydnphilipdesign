@@ -131,29 +131,77 @@ section p {
     margin-bottom: 1em;
 }
 
-#portfolio .graphic-grid,
-#portfolio .photo-grid {
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.photo-masonry {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 15px;
+    grid-auto-rows: 0;
 }
 
-#portfolio .graphic-item,
-#portfolio .photo-item {
-    border: 1px solid #ddd;
-    padding: 0.5em;
-    background-color: white;
+.photo-item {
+    margin-bottom: 15px;
 }
 
-#portfolio .graphic-item img,
-#portfolio .photo-item img {
+.photo-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+.website-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.website-item {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.website-item img {
     width: 100%;
     height: auto;
-    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#portfolio .photo-grid {
-    margin: 1em 0;
+.website-item a {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.website-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
 }
 
 #contact .contact-card {
