@@ -1,43 +1,50 @@
-/* Basic reset */
+/* Basic reset and custom fonts */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Custom Fonts */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     background-color: #f4f4f9;
+    line-height: 1.6;
 }
 
-/* Header */
+/* Header styles */
 #hero {
     position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
-    padding: 50px 0;
-    background-color: #333;
+    overflow: hidden;
 }
 
-#hero .parallax {
+.parallax {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: -1;
 }
 
-#hero .parallax-bg {
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    background-image: url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
 }
 
-#hero img.profile-picture {
+.profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -46,7 +53,8 @@ body {
 }
 
 #hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
 #hero h2 {
@@ -54,32 +62,36 @@ body {
     margin-bottom: 20px;
 }
 
-#hero button {
+.cta-button {
+    display: inline-block;
     background-color: #ff6f61;
     color: white;
-    border: none;
-    padding: 10px 20px;
+    text-decoration: none;
+    padding: 12px 24px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#hero button:hover {
+.cta-button:hover {
     background-color: #ff4b3e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation */
+/* Navigation styles */
 nav {
     background-color: #333;
-    color: white;
-    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
+    list-style-type: none;
+    padding: 15px 0;
 }
 
 nav ul li {
@@ -89,7 +101,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -97,218 +109,190 @@ nav ul li a:hover {
     color: #ff6f61;
 }
 
-/* Main content */
+/* Main content styles */
 .container {
-    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 60px 20px;
 }
 
-/* About Me Section */
-#bio {
-    background-color: #fff;
-    padding: 40px 0;
+section {
+    margin-bottom: 80px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
-#bio h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #ff6f61;
 }
 
-#bio p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-/* Skills Section */
-#skills {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-}
-
-#skills h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Skills section */
 .skills-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .skill-item {
     background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex: 1 1 30%;
-    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Portfolio Section */
-#portfolio {
-    background-color: #fff;
-    padding: 40px 0;
-}
-
-#portfolio h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.portfolio-categories {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Portfolio section */
+.portfolio-categories > div {
+    margin-bottom: 40px;
 }
 
 .portfolio-categories h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
+/* Graphic Design (Swiper) */
 .swiper-container {
     width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
+    height: 400px;
 }
 
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
 }
 
-/* Masonry grid styles */
-.masonry-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Photography section */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
 }
 
-.masonry-grid .grid-item {
-    flex: 1 1 calc(33.333% - 20px);
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.masonry-grid img {
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-item img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* Contact Section */
-#contact {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-    text-align: center;
+.photo-item:hover img {
+    transform: scale(1.05);
 }
 
-#contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
+/* Contact section */
 .contact-card {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: inline-block;
-    margin-bottom: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 #contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form .form-group {
-    text-align: left;
+.form-group {
+    margin-bottom: 20px;
 }
 
-#contact-form label {
-    font-size: 1rem;
+.form-group label {
+    display: block;
     margin-bottom: 5px;
 }
 
-#contact-form input,
-#contact-form textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
     border: 1px solid #ddd;
-    font-size: 1rem;
+    border-radius: 5px;
 }
 
-#contact-form button {
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+}
+
+button[type="submit"] {
     background-color: #ff6f61;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#contact-form button:hover {
+button[type="submit"]:hover {
     background-color: #ff4b3e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Client Access Section */
-#client-access {
-    background-color: #fff;
-    padding: 40px 0;
-    text-align: center;
+/* Client Access section */
+#client-login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-#client-access h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#client-access form {
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-#client-access input {
+#client-login-form input {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
-#client-access button {
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
 }
 
-#client-access button:hover {
-    background-color: #ff4b3e;
-}
-
-/* Footer */
+/* Footer styles */
 footer {
     background-color: #333;
     color: white;
@@ -316,40 +300,136 @@ footer {
     padding: 20px 0;
 }
 
-footer p {
-    font-size: 1rem;
-}
-
 /* Animations */
-@keyframes fadeIn {
+@keyframes fadeInUp {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-#hero img,
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to elements */
 #hero h1,
 #hero h2,
-#hero button {
-    animation: fadeIn 1s ease-in-out;
+#hero .cta-button {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-.skill-item,
-.portfolio-categories,
-#contact-form,
-#client-access form {
-    animation: fadeIn 1s ease-in-out;
+#hero h1 {
+    animation-delay: 0.2s;
 }
 
-/* Parallax Scrolling */
+#hero h2 {
+    animation-delay: 0.4s;
+}
+
+#hero .cta-button {
+    animation-delay: 0.6s;
+}
+
+.skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skill-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-categories h3 {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.swiper-container,
+.photo-grid {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Parallax effect */
 .parallax-bg {
-    will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.pageYOffset;
-    document.querySelector('.parallax-bg').style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-});
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .skill-item {
+        padding: 20px;
+    }
+
+    .swiper-container {
+        height: 300px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .contact-card,
+    #contact-form,
+    #client-login-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

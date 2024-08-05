@@ -16,13 +16,23 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 
-    // Initialize Masonry
-    const grid = document.querySelector('.masonry-grid');
-    const masonry = new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        percentPosition: true
-    });
+       // Remove Masonry initialization
+
+    // Add animation for photo items
+    const photoItems = document.querySelectorAll('.photo-item');
+    const animatePhotos = () => {
+        photoItems.forEach(item => {
+            const itemTop = item.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (itemTop < windowHeight * 0.8) {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animatePhotos);
+    animatePhotos(); // Initial check on page load
 
     // Animate skill items on scroll
     const skillItems = document.querySelectorAll('.skill-item');
