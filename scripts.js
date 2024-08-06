@@ -1,14 +1,15 @@
         // Initialize Swiper
         const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-                delay: 3000,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
 
         // Initialize GSAP for parallax effect
         gsap.to(".parallax-bg", {
@@ -19,30 +20,7 @@
             }
         });
 
-    // execute above function
-    initPhotoSwipeFromDOM('.my-gallery');
-    const openPhotoSwipe = function(index, galleryElement) {
-    const pswpElement = document.querySelectorAll('.pswp')[0];
-    const items = parseThumbnailElements(galleryElement);
 
-    const options = {
-        index: index,
-        bgOpacity: 0.7,
-        showHideOpacity: true
-    };
-
-    const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-    gallery.init();
-};
-
-document.querySelectorAll('.my-gallery').forEach(gallery => {
-    gallery.addEventListener('click', function(event) {
-        event.preventDefault();
-        const clickedItem = event.target.closest('figure');
-        const index = Array.from(gallery.children).indexOf(clickedItem);
-        openPhotoSwipe(index, gallery);
-    });
-});
         <!-- PhotoSwipe Initialization -->
      var initPhotoSwipeFromDOM = function(gallerySelector) {
         // Parse slide data (url, title, size ...) from DOM elements
@@ -91,6 +69,32 @@ document.querySelectorAll('.my-gallery').forEach(gallery => {
 
             return items;
         };
+
+    // execute above function
+    initPhotoSwipeFromDOM('.my-gallery');
+    const openPhotoSwipe = function(index, galleryElement) {
+    const pswpElement = document.querySelectorAll('.pswp')[0];
+    const items = parseThumbnailElements(galleryElement);
+
+    const options = {
+        index: index,
+        bgOpacity: 0.7,
+        showHideOpacity: true
+    };
+
+    const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+};
+document.querySelectorAll('.my-gallery').forEach(gallery => {
+    gallery.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (event.target.tagName === 'IMG') {
+            const clickedItem = event.target.closest('figure');
+            const index = Array.from(gallery.children).indexOf(clickedItem);
+            openPhotoSwipe(index, gallery);
+        }
+    });
+});
 
         // find nearest parent element
         var closest = function closest(el, fn) {
