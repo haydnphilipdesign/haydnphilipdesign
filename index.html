@@ -508,27 +508,32 @@ layout: default
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Initialize Swiper
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
                     },
-                    1024: {
-                        slidesPerView: 3,
+                    speed: 1000,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
                     },
-                }
-            });
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }
+                });
 
             // Parallax effect for hero background
             const parallaxBg = document.querySelector('.parallax-bg');
