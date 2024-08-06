@@ -1,11 +1,4 @@
         // Initialize Swiper
-        var swiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-
         const swiper = new Swiper('.swiper-container', {
             loop: true,
             autoplay: {
