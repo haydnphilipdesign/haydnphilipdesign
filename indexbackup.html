@@ -366,52 +366,51 @@ layout: default
                 column-count: 1;
             }
         }
-.section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    background-color: #fff;
-}
+        /* Improved styles for section stacking effect */
+        .section {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+        }
 
-.main-content {
-    position: relative;
-}
+        .main-content {
+            position: relative;
+        }
 
-#contact, #client-access {
-    margin-bottom: 0;
-    padding-bottom: 50px;
-}
+        /* Remove any extra spacing */
+        #contact, #client-access {
+            margin-bottom: 0;
+            padding-bottom: 50px;
+        }
 
-#client-access {
-    padding: 50px 0;
-}
+        /* Client Access styles */
+        #client-access {
+            padding: 50px 0;
+        }
 
-#password-form {
-    max-width: 300px;
-    margin: 0 auto;
-}
+        #password-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
 
-#password-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+        #password-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-#submit-password {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+        #submit-password {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-.client-content {
-    display: none;
-}
+        .client-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -570,52 +569,60 @@ layout: default
             </div>
         </section>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Swiper initialization
-    new Swiper('.swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        centeredSlides: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-
-    // GSAP and ScrollTrigger initialization
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Stacking effect
-    gsap.utils.toArray('.section').forEach((section, i) => {
-        ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            pin: true,
-            pinSpacing: false
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        // Swiper initialization
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-    });
 
-    // Client Access functionality
-    const passwordForm = document.getElementById('password-form');
-    const clientContent = document.getElementById('client-content');
+        // Improved section stacking effect
+        gsap.registerPlugin(ScrollTrigger);
 
-    const clientData = {
-        'password1': { name: 'Client A', content: 'Welcome, Client A! Here is your exclusive content.' },
-        'password2': { name: 'Client B', content: 'Welcome, Client B! Here is your project update.' },
-        // Add more client passwords and data as needed
-    };
+        const sections = gsap.utils.toArray('.section');
 
-    if (passwordForm) {
+        sections.forEach((section, i) => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top top',
+                pin: true,
+                pinSpacing: false
+            });
+        });
+
+        // Smooth scrolling (optional, but enhances the stacking effect)
+        const smoothScroll = gsap.to(window, {
+            scrollTo: {
+                y: "#client-access",
+                autoKill: false
+            },
+            duration: 1,
+            ease: "power3.inOut"
+        });
+
+        // Client Access functionality
+        const passwordForm = document.getElementById('password-form');
+        const clientContent = document.getElementById('client-content');
+
+        const clientData = {
+            'password1': { name: 'Client A', content: 'Welcome, Client A! Here is your exclusive content.' },
+            'password2': { name: 'Client B', content: 'Welcome, Client B! Here is your project update.' },
+            // Add more client passwords and data as needed
+        };
+
         passwordForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const password = document.getElementById('password-input').value;
@@ -629,8 +636,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Invalid password. Please try again.');
             }
         });
-    }
-});
-</script>
+                // Parallax effect for hero background
+            const parallaxBg = document.querySelector('.parallax-bg');
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.pageYOffset;
+                parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Form submission handling
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                alert('Thank you for your message. I will get back to you soon!');
+                contactForm.reset();
+            });
+
+            // GSAP animations
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate sections on scroll
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.from(section, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+
+            // Animate skill items
+            gsap.utils.toArray('.skill-item').forEach(item => {
+                gsap.from(item, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 90%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+    </script>
 </body>
 </html>
