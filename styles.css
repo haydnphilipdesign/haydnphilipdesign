@@ -1,3 +1,49 @@
+/* Boxed layout container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Masonry grid */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Swiper container */
+.swiper-container {
+    width: 100%;
+    max-width: 1170px; /* Slightly less than container to account for padding */
+    margin: 0 auto;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 /* Base styles */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -169,9 +215,6 @@
 
         /* Swiper adjustments */
            
-        .swiper-container {
-            padding-bottom: 30px; /* Add padding for pagination */
-        }
 
         .swiper-slide {
             display: flex;
