@@ -237,7 +237,7 @@ gsap.from("#hero h1", {
 });
 
 // About section
-gsap.from("#bio p", {
+gsap.from("#about p", {
     opacity: 0,
     x: -50,
     duration: 1,
