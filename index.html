@@ -1,7 +1,3 @@
----
-layout: default
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +6,7 @@ layout: default
     <title>Haydn Watkins - Multimedium Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
     <link rel="stylesheet" href="styles.css">
-     <style>
-        .my-gallery {
-            display: none; /* Prevents images from being displayed before Masonry is initialized */
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -30,15 +19,17 @@ layout: default
         </ul>
     </nav>
 
-    <div id="hero">
+    <section id="hero">
         <div class="parallax">
             <div class="parallax-bg"></div>
         </div>
-        <img src="assets/images/me.jpg" alt="Haydn Watkins" class="profile-picture">
-        <h1>Haydn Watkins</h1>
-        <h2>Multimedium Designer</h2>
-        <a href="#contact" class="cta-button">Get In Touch</a>
-    </div>
+        <div class="container">
+            <img src="profile-picture.jpg" alt="Haydn Watkins" class="profile-picture">
+            <h1>Haydn Watkins</h1>
+            <h2>Multimedium Designer</h2>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
 
     <section id="about">
         <div class="container">
@@ -64,158 +55,43 @@ layout: default
     <section id="portfolio">
         <div class="container">
             <h2>My Portfolio</h2>
-            <div class="portfolio-categories">
-                <div id="graphic-design">
-                    <h3>Graphic Design</h3>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic1.jpg" alt="Graphic Design Project 1" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic2.jpg" alt="Graphic Design Project 2" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic3.jpg" alt="Graphic Design Project 3" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic4.jpg" alt="Graphic Design Project 4" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic5.jpg" alt="Graphic Design Project 5" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic6.jpg" alt="Graphic Design Project 6" data-size="1417x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic7.jpg" alt="Graphic Design Project 7" data-size="890x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic8.jpg" alt="Graphic Design Project 8" data-size="889x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic9.jpg" alt="Graphic Design Project 9" data-size="708x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic10.jpg" alt="Graphic Design Project 10" data-size="694x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic11.jpg" alt="Graphic Design Project 11" data-size="689x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic12.jpg" alt="Graphic Design Project 12" data-size="597x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic13.jpg" alt="Graphic Design Project 13" data-size="572x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic14.jpg" alt="Graphic Design Project 14" data-size="546x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic15.jpg" alt="Graphic Design Project 15" data-size="500x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic16.jpg" alt="Graphic Design Project 16" data-size="500x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic17.jpg" alt="Graphic Design Project 17" data-size="500x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic18.jpg" alt="Graphic Design Project 18" data-size="500x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic19.jpg" alt="Graphic Design Project 19" data-size="386x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic20.jpg" alt="Graphic Design Project 20" data-size="386x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic21.jpg" alt="Graphic Design Project 21" data-size="353x500">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/portfolio/graphic22.jpg" alt="Graphic Design Project 22" data-size="353x500">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+            
+            <h3>Graphic Design</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="graphic-design-1.jpg" alt="Graphic Design 1"></div>
+                    <div class="swiper-slide"><img src="graphic-design-2.jpg" alt="Graphic Design 2"></div>
+                    <div class="swiper-slide"><img src="graphic-design-3.jpg" alt="Graphic Design 3"></div>
+                    <div class="swiper-slide"><img src="graphic-design-4.jpg" alt="Graphic Design 4"></div>
                 </div>
-                
-                <div id="photo">
-                    <h3>Photography</h3>
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo1.jpg" itemprop="contentUrl" data-size="948x500">
-                                <img src="assets/images/portfolio/photo1.jpg" itemprop="thumbnail" alt="Photography 1">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 1</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo2.jpg" itemprop="contentUrl" data-size="889x500">
-                                <img src="assets/images/portfolio/photo2.jpg" itemprop="thumbnail" alt="Photography 2">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 2</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo3.jpg" itemprop="contentUrl" data-size="750x500">
-                                <img src="assets/images/portfolio/photo3.jpg" itemprop="thumbnail" alt="Photography 3">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 3</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo4.jpg" itemprop="contentUrl" data-size="667x500">
-                                <img src="assets/images/portfolio/photo4.jpg" itemprop="thumbnail" alt="Photography 4">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 4</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo5.jpg" itemprop="contentUrl" data-size="505x500">
-                                <img src="assets/images/portfolio/photo5.jpg" itemprop="thumbnail" alt="Photography 5">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 5</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo6.jpg" itemprop="contentUrl" data-size="499x500">
-                                <img src="assets/images/portfolio/photo6.jpg" itemprop="thumbnail" alt="Photography 6">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 6</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo7.jpg" itemprop="contentUrl" data-size="376x500">
-                                <img src="assets/images/portfolio/photo7.jpg" itemprop="thumbnail" alt="Photography 7">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 7</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/photo8.jpg" itemprop="contentUrl" data-size="333x500">
-                                <img src="assets/images/portfolio/photo8.jpg" itemprop="thumbnail" alt="Photography 8">
-                            </a>
-                            <figcaption itemprop="caption description">Photography 8</figcaption>
-                        </figure>
-                    </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <h3>Photography</h3>
+            <div class="photo-masonry">
+                <div class="photo-item"><img src="photography-1.jpg" alt="Photography 1"></div>
+                <div class="photo-item"><img src="photography-2.jpg" alt="Photography 2"></div>
+                <div class="photo-item"><img src="photography-3.jpg" alt="Photography 3"></div>
+                <div class="photo-item"><img src="photography-4.jpg" alt="Photography 4"></div>
+                <div class="photo-item"><img src="photography-5.jpg" alt="Photography 5"></div>
+                <div class="photo-item"><img src="photography-6.jpg" alt="Photography 6"></div>
+            </div>
+
+            <h3>Web Design</h3>
+            <div class="website-grid">
+                <div class="website-item">
+                    <img src="website-1.jpg" alt="Website 1">
+                    <a href="#" target="_blank">View Project</a>
                 </div>
-                
-                <div id="websites">
-                    <h3>Web Design</h3>
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/website1.jpg" itemprop="contentUrl" data-size="1200x900">
-                                <img src="assets/images/portfolio/website1.jpg" itemprop="thumbnail" alt="Website 1">
-                            </a>
-                            <figcaption itemprop="caption description">Website 1</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/website2.jpg" itemprop="contentUrl" data-size="1200x900">
-                                <img src="assets/images/portfolio/website2.jpg" itemprop="thumbnail" alt="Website 2">
-                            </a>
-                            <figcaption itemprop="caption description">Website 2</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="assets/images/portfolio/website3.jpg" itemprop="contentUrl" data-size="1200x900">
-                                <img src="assets/images/portfolio/website3.jpg" itemprop="thumbnail" alt="Website 3">
-                            </a>
-                            <figcaption itemprop="caption description">Website 3</figcaption>
-                        </figure>
-                    </div>
+                <div class="website-item">
+                    <img src="website-2.jpg" alt="Website 2">
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="website-item">
+                    <img src="website-3.jpg" alt="Website 3">
+                    <a href="#" target="_blank">View Project</a>
                 </div>
             </div>
         </div>
@@ -236,14 +112,13 @@ layout: default
     <section id="client-access">
         <div class="container">
             <h2>Client Access</h2>
-            <div id="password-form">
+            <form id="password-form">
                 <input type="password" id="password-input" placeholder="Enter password">
-                <button id="submit-password">Submit</button>
-            </div>
+                <button type="button" id="submit-password">Submit</button>
+            </form>
             <div class="client-content">
                 <h3>Welcome, Client!</h3>
                 <p>Here is your exclusive content...</p>
-                <!-- Add more client-specific content here -->
             </div>
         </div>
     </section>
@@ -254,50 +129,9 @@ layout: default
         </div>
     </footer>
 
- <!-- PhotoSwipe HTML structure -->
-   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- PhotoSwipe UI and JS -->
-    <script src="path/to/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
