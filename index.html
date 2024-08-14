@@ -52,10 +52,11 @@
         </div>
     </section>
 
-    <section id="portfolio">
-        <div class="container">
-            <h2>My Portfolio</h2>
-            
+<section id="portfolio">
+    <div class="container">
+        <h2>My Portfolio</h2>
+        
+        <div class="portfolio-category">
             <h3>Graphic Design</h3>
             <div class="photo-masonry">
                             <div class="photo-item">
@@ -125,7 +126,9 @@
                                 <img src="assets/images/portfolio/graphic22.jpg" alt="Graphic Design Project 22" data-size="353x500">
                             </div>
                         </div>
-
+        </div>
+        
+        <div class="portfolio-category">
             <h3>Photography</h3>
             <div class="photo-masonry">
                 <div class="photo-item"><img src="assets/images/portfolio/photo1.jpg" alt="Photography 1"></div>
@@ -135,9 +138,11 @@
                 <div class="photo-item"><img src="assets/images/portfolio/photo5.jpg" alt="Photography 5"></div>
                 <div class="photo-item"><img src="assets/images/portfolio/photo6.jpg" alt="Photography 6"></div>
             </div>
-
+        </div>
+        
+        <div class="portfolio-category">
             <h3>Web Design</h3>
-            <div class="website-grid">
+           <div class="website-grid">
                 <div class="website-item">
                     <img src="assets/images/portfolio/three-penn.png" alt="Three Penn Properties - Full Website">
                     <a href="https://threepenn.com" target="_blank">Three Penn Properties - Full Website</a>
@@ -156,35 +161,17 @@
                 </div>
             </div>
         </div>
-    </section>
-
-       <section id="contact">
+    </div>
+</section>
+<section id="contact">
     <div class="container">
         <h2>Contact Me</h2>
-        <form id="form">
-  <div class="field">
-    <label for="name">Your Name:</label>
-    <input type="text" name="name" id="name">
-  </div>
-  <div class="field">
-    <label for="email">Your Email:</label>
-    <input type="text" name="email" id="email">
-  </div>
-  <div class="field">
-    <label for="phone">Your Phone:</label>
-    <input type="text" name="phone" id="phone">
-  </div>
-  <div class="field">
-    <label for="project_details">Project Details:</label>
-    <input type="text" name="project_details" id="project_details">
-  </div>
-  <div class="field">
-    <label for="website">Your Website:</label>
-    <input type="text" name="website" id="website">
-  </div>
-
-  <input type="submit" id="button" value="Send Email" >
-</form>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
         <div id="form-status"></div>
     </div>
 </section>
