@@ -170,8 +170,7 @@ section h3 {
 
 .swiper-slide img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 500px;
     object-fit: contain;
     border-radius: 10px;
 }
