@@ -59,19 +59,25 @@ sections.forEach(section => {
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Here you would typically send the form data to a server
-    // For this example, we'll just log it to the console
     const formData = new FormData(this);
-    console.log('Form submitted:');
-    for (let [key, value] of formData.entries()) {
-        console.log(key + ': ' + value);
-    }
-    
-    // Clear the form
-    this.reset();
-    
-    // Show a success message
-    alert('Thank you for your message. We\'ll get back to you soon!');
+    const templateParams = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+    };
+
+    // Show loading message
+    document.getElementById('form-status').textContent = 'Sending...';
+
+    emailjs.send('default_service', 'contact_form', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('form-status').textContent = 'Message sent successfully!';
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById('form-status').textContent = 'Failed to send message. Please try again.';
+        });
 });
 
 // Password protection for client access
