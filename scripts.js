@@ -1,3 +1,19 @@
+// Load More Button
+document.addEventListener('DOMContentLoaded', function() {
+    const loadMoreBtn = document.getElementById('load-more-graphics');
+    const additionalGraphics = document.getElementById('additional-graphics');
+
+    loadMoreBtn.addEventListener('click', function() {
+        if (additionalGraphics.style.display === 'none') {
+            additionalGraphics.style.display = 'block';
+            loadMoreBtn.textContent = 'View Less';
+        } else {
+            additionalGraphics.style.display = 'none';
+            loadMoreBtn.textContent = 'View More';
+        }
+    });
+});
+
 // Initialize Swiper
 const swiper = new Swiper('.swiper-container', {
     loop: true,
